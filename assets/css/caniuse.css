@@ -1,0 +1,276 @@
+/* fonts for browser icons (used with permission from IcoMoon.io) */
+@font-face {
+  font-family: 'agents';
+  src: url('../fonts/agents.eot');
+  src: url('../fonts/agents.eot?#iefix') format('embedded-opentype'), url('../fonts/agents.svg#agents') format('svg'), url('../fonts/agents.woff') format('woff'), url('../fonts/agents.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@keyframes mihdan-pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+.mihdan-caniuse {
+  padding: 0;
+  position: relative;
+  min-height: 450px;
+  background-color: #f2e8d5;
+  border-radius: 1px;
+  line-height: 1.4;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 20px;
+}
+.mihdan-caniuse__loader {
+  border: 5px solid #db5600;
+  border-radius: 30px;
+  height: 30px;
+  left: 50%;
+  margin: -15px 0 0 -15px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-indent: 100px;
+  animation: mihdan-pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+}
+.mihdan-caniuse__title {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 1.8em;
+}
+.mihdan-caniuse__status {
+  font-size: 0.4em;
+}
+.mihdan-caniuse__description {
+  padding: 0 20px;
+}
+.mihdan-caniuse__caption {
+  text-align: center;
+  margin: 5px 0;
+  font-size: 1.4em;
+}
+.mihdan-caniuse__agents {
+  text-align: center;
+}
+.mihdan-caniuse h1,
+.mihdan-caniuse h2,
+.mihdan-caniuse h3,
+.mihdan-caniuse h4,
+.mihdan-caniuse p {
+  margin: 5px 0;
+}
+.mihdan-caniuse h1 {
+  font-size: 1.8em;
+}
+.mihdan-caniuse h2 {
+  font-size: 1.4em;
+}
+.mihdan-caniuse h3 {
+  font-size: 1.2em;
+}
+.mihdan-caniuse p {
+  font-size: 0.8em;
+}
+.mihdan-caniuse .status {
+  font-style: italic;
+}
+.mihdan-caniuse .agents,
+.mihdan-caniuse .legend {
+  list-style-type: none;
+  margin: 0 20px;
+  padding: 0;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-pack: justify;
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  text-align: justify;
+  text-align-last: justify;
+}
+.mihdan-caniuse .agents > li,
+.mihdan-caniuse .legend > li {
+  display: inline-block;
+  width: 90px;
+  vertical-align: top;
+  position: relative;
+  display: -webkit-box;
+  padding: 5px 0;
+  text-align: center;
+  color: #fff;
+}
+.mihdan-caniuse .agents li.y,
+.mihdan-caniuse .legend li.y,
+.mihdan-caniuse .agents li.x,
+.mihdan-caniuse .legend li.x {
+  background: #39b54a;
+}
+.mihdan-caniuse .agents li.a,
+.mihdan-caniuse .legend li.a {
+  background: #cd5;
+}
+.mihdan-caniuse .agents li.p,
+.mihdan-caniuse .legend li.p {
+  background: #aaf;
+}
+.mihdan-caniuse .agents li.n,
+.mihdan-caniuse .legend li.n {
+  background: #c44230;
+}
+.mihdan-caniuse .agents li.u,
+.mihdan-caniuse .legend li.u {
+  background: #ccc;
+}
+.mihdan-caniuse .legend li {
+  text-align: center;
+}
+.mihdan-caniuse .agents li {
+  font-size: 1em;
+  /* android */
+  /* chrome */
+  /* firefox */
+  /* ie */
+  /* ios */
+  /* opera */
+  /* safari */
+  /* hover states */
+  min-height: 90px;
+}
+.mihdan-caniuse .agents li .version {
+  display: block;
+}
+.mihdan-caniuse .agents li:hover,
+.mihdan-caniuse .agents li:hover:before {
+  color: #fff;
+}
+.mihdan-caniuse .agents li:before {
+  color: #fff;
+  font-size: 2em;
+}
+.mihdan-caniuse .agents li[class^="icon-"]:before,
+.mihdan-caniuse .agents li [class*=" icon-"]:before {
+  font-family: 'agents';
+  font-style: normal;
+  speak: none;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+.mihdan-caniuse .agents li.icon-android:before {
+  content: "\e006";
+}
+.mihdan-caniuse .agents li.icon-chrome:before,
+.mihdan-caniuse .agents li.icon-and_chr:before {
+  content: "\e004";
+}
+.mihdan-caniuse .agents li.icon-firefox:before,
+.mihdan-caniuse .agents li.icon-and_ff:before {
+  content: "\e000";
+}
+.mihdan-caniuse .agents li.icon-ie:before,
+.mihdan-caniuse .agents li.icon-edge:before,
+.mihdan-caniuse .agents li.icon-windows:before {
+  content: "\e001";
+  /* alternate windows icon: content: "\e007" */
+}
+.mihdan-caniuse .agents li.icon-ios_saf:before {
+  content: "\e005";
+}
+.mihdan-caniuse .agents li.icon-opera:before,
+.mihdan-caniuse .agents li.icon-op_mini:before,
+.mihdan-caniuse .agents li.icon-op_mob:before {
+  content: "\e002";
+}
+.mihdan-caniuse .agents li.icon-safari:before {
+  content: "\e003";
+}
+.mihdan-caniuse .agents li.icon-ios_saf:hover,
+.mihdan-caniuse .agents li.icon-safari:hover {
+  background: #869abb;
+}
+.mihdan-caniuse .agents li.icon-android:hover {
+  background: #97c03d;
+}
+.mihdan-caniuse .agents li.icon-chrome:hover,
+.mihdan-caniuse .agents li.icon-and_chr:hover {
+  background: #40ace8;
+}
+.mihdan-caniuse .agents li.icon-firefox:hover,
+.mihdan-caniuse .agents li.icon-and_ff:hover {
+  background: #dc6f26;
+}
+.mihdan-caniuse .agents li.icon-ie:hover,
+.mihdan-caniuse .agents li.icon-windows:hover {
+  background: #1a4cbd;
+}
+.mihdan-caniuse .agents li.icon-edge:hover {
+  background: #0575bf;
+}
+.mihdan-caniuse .agents li.icon-opera:hover,
+.mihdan-caniuse .agents li.icon-op_mini:hover,
+.mihdan-caniuse .agents li.icon-op_mob:hover {
+  background: #f0232a;
+}
+.mihdan-caniuse .legend {
+  border-top: 1px dotted #aaa;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+.mihdan-caniuse .legend li {
+  font-size: 0.8em;
+}
+.mihdan-caniuse .legend li.key {
+  font-weight: bold;
+}
+.mihdan-caniuse-tabs {
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.9em;
+  margin: 2em 0 0 0;
+  position: relative;
+}
+.mihdan-caniuse-tabs dt {
+  float: left;
+  line-height: 2;
+  height: 2em;
+  background: #ecdec3;
+  padding: 0 1em;
+  position: relative;
+  left: 20px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+.mihdan-caniuse-tabs dt.selected {
+  background: #e0c89b;
+  z-index: 3;
+  cursor: auto;
+}
+.mihdan-caniuse-tabs dt:hover {
+  background-color: #e0c89b;
+}
+.mihdan-caniuse-tabs dd {
+  background: #e0c89b;
+  display: none;
+  float: right;
+  width: 100%;
+  margin: 2em 0 0 -100%;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+.mihdan-caniuse-tabs dd.selected {
+  display: block;
+}
