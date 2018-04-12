@@ -1,7 +1,22 @@
 (function( tinymce ) {
 	'use strict';
 
-	tinymce.create('tinymce.plugins.caniuse_plugin', {
+	tinymce.create( 'tinymce.plugins.caniuse_plugin', {
+
+		capitalize: function( str ) {
+			return str.charAt(0).toUpperCase() + str.slice(1);
+		},
+
+		sort_by: function( field, primer ){
+			var key = primer ?
+				function(x) {return primer(x[field])} :
+				function(x) {return x[field]};
+
+			return function (a, b) {
+				return a = key(a), b = key(b), 1 * ((a > b) - (b > a));
+			};
+		},
+
 		/**
 		 * Initializes the plugin, this will be executed after the plugin has been created.
 		 * This call is done before the editor instance has finished it's initialization so use the onInit event
@@ -12,20 +27,38 @@
 		 */
 		init : function( ed, url ) {
 
-			ed.addButton( 'caniuse_button', {
-				title : 'Add recent posts shortcode',
-				cmd : 'caniuse_command',
-				image : url + '/icons/caniuse.png'
+			var features = [];
+
+			$.getJSON('https://raw.githubusercontent.com/Fyrd/caniuse/master/fulldata-json/data-2.0.json', function(res) {
+
+				//var featuresArray = [];
+				for (var feature in res.data) {
+					var featureTitle = res.data[feature].title;
+					featureTitle = ed.plugins.caniuse_plugin.capitalize( featureTitle );
+
+					feature = {
+						value: feature,
+						text: featureTitle
+					};
+					features.push(feature);
+				}
+
+
+				features.sort( ed.plugins.caniuse_plugin.sort_by( 'text', function(a){return a}));
+
 			});
 
-			ed.addCommand( 'dropcap', function() {
-				var selected_text = ed.selection.getContent();
-				var return_text = '';
-				return_text = '<span class="dropcap">' + selected_text + '</span>';
-				ed.execCommand('mceInsertContent', 0, return_text);
+			ed.addButton( 'caniuse_button', {
+				//title : 'Вставка шорткода Can I use',
+				tooltip : 'Вставка шорткода Can I use',
+				cmd : 'caniuse_command',
+				//icon: 'dashicons-chart-area'
+				image : url + '/icons/caniuse.png'
+				//text : 'Can I use',
 			});
 
 			ed.addCommand( 'caniuse_command', function() {
+				//var selected_text = ed.selection.getContent();
 //				var number = prompt("How many posts you want to show ? "),
 //					shortcode;
 //				if (number !== null) {
@@ -41,12 +74,16 @@
 
 				ed.windowManager.open({
 					title: 'Настройка шорткода Can I use',
+					width: 400,
+					height: 80,
 					body: [
-						{type: 'textbox', name: 'title', label: 'Фича'}
+						{type: 'listbox', name: 'features', label: 'Фича',
+							values : features,
+							value : 'test2'},
 					],
 					onsubmit: function(e) {
 						// Insert content when the window form is submitted
-						ed.insertContent('Title: ' + e.data.title);
+						ed.insertContent( '[caniuse feature="' + e.data.features + '"]' );
 					},
 					buttons_: [{
 						text: 'Close',
