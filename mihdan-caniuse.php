@@ -3,10 +3,11 @@
  * Plugin Name: Mihdan: Can I Use
  * Plugin URI: https://www.kobzarev.com/
  * Description: Add Can I Use support tables to your WordPress web site thanks to this shortcode
- * Version: 1.0
+ * Version: 1.1
  * Author: Mikhail Kobzarev
  * Author URI: https://www.kobzarev.com/
  * License: GPL
+ * GitHub Plugin URI: https://github.com/mihdan/mihdan-caniuse
  *
  * @link https://github.com/andismith/caniuse-widget
  * @link https://github.com/Keyamoon/IcoMoon-Free/tree/master/SVG

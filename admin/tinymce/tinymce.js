@@ -61,9 +61,12 @@
 					width: 400,
 					height: 80,
 					body: [
-						{type: 'listbox', name: 'features', label: 'Фича',
-							values : features,
-							value : 'test2'},
+						{
+							type: 'listbox',
+							name: 'features',
+							label: 'Фича',
+							values : features
+						},
 					],
 					onsubmit: function(e) {
 						// Insert content when the window form is submitted
@@ -99,11 +102,11 @@
 		 */
 		getInfo : function() {
 			return {
-				longname : 'CanIUse Buttons',
+				longname : 'Can I use Buttons',
 				author : 'mihdan',
 				authorurl : 'https://www.kobzarev.com/',
-				infourl : 'https://www.kobzarev.com/',
-				version : "0.1"
+				infourl : 'https://github.com/mihdan/mihdan-caniuse/',
+				version : "1.1"
 			};
 		}
 	});
