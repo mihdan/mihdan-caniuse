@@ -32,15 +32,14 @@
 			$.getJSON('https://raw.githubusercontent.com/Fyrd/caniuse/master/fulldata-json/data-2.0.json', function(res) {
 
 				//var featuresArray = [];
-				for (var feature in res.data) {
-					var featureTitle = res.data[feature].title;
+				for ( var feature in res.data ) {
+					var featureTitle = res.data[ feature ].title;
 					featureTitle = ed.plugins.caniuse_plugin.capitalize( featureTitle );
 
-					feature = {
+					features.push( {
 						value: feature,
 						text: featureTitle
-					};
-					features.push(feature);
+					} );
 				}
 
 
@@ -49,29 +48,14 @@
 			});
 
 			ed.addButton( 'caniuse_button', {
-				//title : 'Вставка шорткода Can I use',
 				tooltip : 'Вставка шорткода Can I use',
 				cmd : 'caniuse_command',
-				//icon: 'dashicons-chart-area'
 				image : url + '/icons/caniuse.png'
-				//text : 'Can I use',
 			});
 
 			ed.addCommand( 'caniuse_command', function() {
-				//var selected_text = ed.selection.getContent();
-//				var number = prompt("How many posts you want to show ? "),
-//					shortcode;
-//				if (number !== null) {
-//					number = parseInt(number);
-//					if (number > 0 && number <= 20) {
-//						shortcode = '[recent-post number="' + number + '"/]';
-//						ed.execCommand('mceInsertContent', 0, shortcode);
-//					}
-//					else {
-//						alert("The number value is invalid. It should be from 0 to 20.");
-//					}
-//				}
 
+				// Открыть попапчик
 				ed.windowManager.open({
 					title: 'Настройка шорткода Can I use',
 					width: 400,

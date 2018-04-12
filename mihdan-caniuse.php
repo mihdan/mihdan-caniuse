@@ -131,27 +131,19 @@ if ( ! class_exists( 'Mihdan_Caniuse' ) ) :
 				'feature' => 'audio',
 			), $atts, 'caniuse' );
 
+			wp_enqueue_script( self::SLUG );
+			wp_enqueue_style( self::SLUG );
 
+			ob_start(); ?>
 
-			//if ( ! empty( $_GET['preview']) ) {
+			<p class="ciu_embed" data-feature="<?php echo esc_attr( $atts['feature'] ); ?>" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false"></p>
 
-				wp_enqueue_script( self::SLUG );
-				wp_enqueue_style( self::SLUG );
+			<?php
 
-				ob_start(); ?>
+			$tpl = ob_get_contents();
+			ob_end_clean();
 
-				<div class="mihdan-caniuse" data-feature="<?php echo esc_attr( $atts['feature'] ); ?>"></div>
-				<p class="ciu_embed" data-feature="<?php echo esc_attr( $atts['feature'] ); ?>" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false"></p>
-
-				<?php
-
-				$tpl = ob_get_contents();
-				ob_end_clean();
-
-				return $tpl;
-			//}
-
-
+			return $tpl;
 		}
 	}
 
@@ -162,3 +154,5 @@ if ( ! class_exists( 'Mihdan_Caniuse' ) ) :
 	$GLOBALS['mihdan_caniuse'] = Mihdan_Caniuse();
 
 endif;
+
+// eof;
