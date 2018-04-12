@@ -12,6 +12,7 @@
  * @link https://github.com/andismith/caniuse-widget
  * @link https://github.com/Keyamoon/IcoMoon-Free/tree/master/SVG
  * @link http://chikuyonok.ru/2009/04/dl-tabs/
+ * @link https://caniuse.bitsofco.de/
  *
  * @package mihdan-caniuse
  */
